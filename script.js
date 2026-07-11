@@ -1,29 +1,14 @@
-// 公開前に、下記2項目を実際の連絡先へ変更してください。
+// メールアドレスを変更する場合は、ここを編集してください。
 const contact = {
-  email: "", // 例: "example@example.com"
-  lineUrl: "", // 例: "https://line.me/R/ti/p/@your-id"
+  email: "jitianjiansi509@gmail.com",
 };
 
 const emailLink = document.querySelector('.contact-email');
-const lineLink = document.querySelector('.contact-line');
 const subject = encodeURIComponent('蜂針療法についての問い合わせ');
 
-if (contact.email) {
+// メールボタンに件名付きの mailto を設定します。
+if (emailLink && contact.email) {
   emailLink.href = `mailto:${contact.email}?subject=${subject}`;
-} else {
-  emailLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    alert('メールアドレスを設定後にご利用いただけます。');
-  });
-}
-
-if (contact.lineUrl) {
-  lineLink.href = contact.lineUrl;
-} else {
-  lineLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    alert('LINEの連絡先を設定後にご利用いただけます。');
-  });
 }
 
 document.querySelector('#year').textContent = new Date().getFullYear();
