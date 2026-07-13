@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ご相談・お問い合わせにあたって｜アピセラピー稲美</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1d2922" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%9D%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header"><a class="brand" href="index.html#top"><small>蜂針療法のご相談</small><b>アピセラピー稲美</b></a><a class="header-cta" href="index.html#top">トップに戻る <b>→</b></a></header>
+    <main class="gate">
+      <section class="gate-inner">
+        <p class="kicker red">CONTACT</p>
+        <h1>ご相談・お問い合わせにあたって</h1>
+        <p class="gate-lead">メールでのお問い合わせに進む前に、下記の内容を必ずお読みください。ご同意いただける場合のみ、メール作成画面へお進みいただけます。</p>
+        <div class="gate-box">
+          <h2>ご確認事項</h2>
+          <ul>
+            <li>蜂針療法は医療行為ではなく、医薬品・医療機器として承認されたものでもありません。<b>効果・効能を保証するものではありません。</b></li>
+            <li>ご相談は病気の診断・治療ではなく、<b>施術やお申し込みを確約するものではありません。</b>ご相談のうえ、ご自身のご判断でお決めいただけます。</li>
+            <li>持病・アレルギー・妊娠中・授乳中・服薬中の方、治療を受けている方は、<b>事前に必ず主治医へご相談ください。</b>緊急性のある症状がある場合は、まず医療機関へご相談ください。</li>
+            <li>お問い合わせ内容によっては、ご相談をお受けできない場合があります。</li>
+            <li>いただいた個人情報は、お問い合わせへの対応の目的にのみ使用します。</li>
+          </ul>
+        </div>
+        <label class="gate-check"><input type="checkbox" id="agree" /> <span>上記の内容を理解し、同意します。</span></label>
+        <div class="gate-actions">
+          <button type="button" class="button" id="proceed" disabled>同意してメールで問い合わせる <span>→</span></button>
+          <a class="gate-back" href="index.html#top">同意せずトップに戻る</a>
+        </div>
+      </section>
+    </main>
+    <footer><div><strong>アピセラピー稲美</strong><p>吉田 健司<br />〒675-1112 兵庫県加古郡稲美町六分一</p></div><div>特定非営利活動法人<br />日本アピセラピー協会会員</div><small>© <span id="year"></span> APITHERAPY CONSULTATION</small></footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var agree = document.getElementById('agree');
+      var proceed = document.getElementById('proceed');
+      agree.addEventListener('change', function () { proceed.disabled = !agree.checked; });
+      proceed.addEventListener('click', function () {
+        if (!agree.checked) return;
+        var subject = encodeURIComponent('蜂針療法についての問い合わせ');
+        location.href = 'mailto:jitianjiansi509@gmail.com?subject=' + subject;
+      });
+    </script>
+  </body>
+</html>
