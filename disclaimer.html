@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ご相談症例のご案内について｜アピセラピー稲美</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1d2922" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%90%9D%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header"><a class="brand" href="index.html#top"><small>蜂針療法のご相談</small><b>アピセラピー稲美</b></a><a class="header-cta" href="index.html#contact">ご相談・お問い合わせ <b>→</b></a></header>
+    <main class="gate">
+      <section class="gate-inner">
+        <p class="kicker red">DISCLAIMER</p>
+        <h1>ご相談症例のご案内について</h1>
+        <p class="gate-lead">このページの先では、これまでにお寄せいただいたご相談の症状例を掲載しています。ご覧いただく前に、下記の免責事項を必ずお読みください。</p>
+        <div class="gate-box">
+          <h2>免責事項</h2>
+          <ul>
+            <li>掲載内容は、過去にご相談いただいた方の申告や感想に基づくものであり、<b>効果・効能を保証するものではありません。</b></li>
+            <li>蜂針療法は医療行為ではなく、医薬品・医療機器として承認されたものでもありません。<b>病気の診断・治療や、症状の改善を約束するものではありません。</b></li>
+            <li>現在治療を受けている方は、<b>主治医の指示を優先</b>してください。持病・アレルギー・妊娠中・服薬中の方は、事前に必ず医師へご相談ください。</li>
+            <li>効果や感じ方には<b>個人差</b>があり、記載の症状に対して同じ結果を保証するものではありません。</li>
+            <li>掲載内容は情報提供を目的としたものであり、施術の勧誘や効果の断定を意図するものではありません。</li>
+          </ul>
+        </div>
+        <label class="gate-check"><input type="checkbox" id="agree" /> <span>上記の免責事項を理解し、同意します。</span></label>
+        <div class="gate-actions">
+          <button type="button" class="button" id="proceed" disabled>同意して一覧を見る <span>→</span></button>
+          <a class="gate-back" href="index.html#top">同意せずトップに戻る</a>
+        </div>
+      </section>
+    </main>
+    <footer><div><strong>アピセラピー稲美</strong><p>吉田 健司<br />〒675-1112 兵庫県加古郡稲美町六分一</p></div><div>特定非営利活動法人<br />日本アピセラピー協会会員</div><small>© <span id="year"></span> APITHERAPY CONSULTATION</small></footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var agree = document.getElementById('agree');
+      var proceed = document.getElementById('proceed');
+      agree.addEventListener('change', function () { proceed.disabled = !agree.checked; });
+      proceed.addEventListener('click', function () {
+        if (!agree.checked) return;
+        try { sessionStorage.setItem('symptomsAgreed', '1'); } catch (e) {}
+        location.href = 'symptoms.html';
+      });
+    </script>
+  </body>
+</html>
